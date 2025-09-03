@@ -25,7 +25,7 @@ const CurrentWeather = ({ weatherData, unit }) => {
         <span style={styles.tempIcon}>
           {getWeatherIcon(weatherData.current.condition.text, weatherData.current.is_day)}
         </span>
-        <span style={unit === 'metric' ? styles.tempValue : styles.tempValueFahrenheit}>
+        <span style={styles.tempValue}>
           {unit === 'metric' ? weatherData.current.temp_c : weatherData.current.temp_f}°
           {unit === 'metric' ? 'C' : 'F'}
         </span>
@@ -94,22 +94,6 @@ const styles = {
     },
     '@media (min-width: 1024px)': {
       fontSize: '84px'
-    }
-  },
-  tempValueFahrenheit: {
-    fontSize: '40px',
-    fontWeight: 'bold',
-    color: '#2d3436',
-    textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-    lineHeight: 1,
-    '@media (min-width: 480px)': {
-      fontSize: '50px'
-    },
-    '@media (min-width: 768px)': {
-      fontSize: '60px'
-    },
-    '@media (min-width: 1024px)': {
-      fontSize: '70px'
     }
   },
   condition: {
